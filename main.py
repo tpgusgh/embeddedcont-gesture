@@ -105,7 +105,7 @@ threading.Thread(target=gesture_loop, daemon=True).start()
 @app.get("/gesture")
 def get_gesture():
     with lock:
-        return {"gesture": current_gesture, "value": gesture_value}
+        return {"gesture": current_gesture, "value": gesture_value} #체스터 ok, left, right 반환
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
